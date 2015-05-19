@@ -1,5 +1,9 @@
 require "translation_engine/version"
+require 'action_view_extensions'
 
 module TranslationEngine
-  # Your code goes here...
+
 end
+
+#Include as view helper
+ActionView::Base.send :include, TranslationEngine::ActionViewExtensions
