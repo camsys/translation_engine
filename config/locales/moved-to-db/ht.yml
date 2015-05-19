@@ -900,7 +900,6 @@ ht:
     - Fri
     - Sat
     abbr_month_names:
-    -
     - Jan
     - Feb
     - Mar
@@ -928,7 +927,6 @@ ht:
       oneclick_long: ! '%A, %B %-d %Y'
       oneclick_short: ! '%A, %B %-d'
     month_names:
-    -
     - January
     - February
     - March
