@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+1. Run rake translation_engine:load_locales to load database from files
 
 ## Contributing
 
