@@ -1,3 +1,4 @@
+require 'rake'
 namespace :translation_engine do
   desc "Load database translations from config/locales/moved-to-db/*.yml files (idempotent)"
   task load_locales: :environment do
