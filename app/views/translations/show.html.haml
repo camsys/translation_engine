@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Locale:
+  = @tranzlation.locale_id
+%p
+  %b Key:
+  = @tranzlation.key
+%p
+  %b Value:
+  = @tranzlation.value
+
+= link_to 'Edit', edit_tranzlation_path(@tranzlation)
+\|
+= link_to 'Back', tranzlations_path

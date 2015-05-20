@@ -1,0 +1,23 @@
+%h1 Listing tranzlations
+
+%table
+  %tr
+    %th Locale
+    %th Key
+    %th Value
+    %th
+    %th
+    %th
+
+  - @tranzlations.each do |tranzlation|
+    %tr
+      %td= tranzlation.locale_id
+      %td= tranzlation.key
+      %td= tranzlation.value
+      %td= link_to 'Show', tranzlation
+      %td= link_to 'Edit', edit_tranzlation_path(tranzlation)
+      %td= link_to 'Destroy', tranzlation, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Tranzlation', new_tranzlation_path

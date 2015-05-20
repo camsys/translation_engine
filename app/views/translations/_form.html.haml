@@ -1,0 +1,10 @@
+= simple_form_for(@tranzlation) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :locale_id
+    = f.input :key
+    = f.input :value
+
+  .form-actions
+    = f.button :submit
