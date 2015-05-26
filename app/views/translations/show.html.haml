@@ -2,14 +2,14 @@
 
 %p
   %b Locale:
-  = @tranzlation.locale_id
+  = @translation.locale_id
 %p
   %b Key:
-  = @tranzlation.key
+  = @translation.key
 %p
   %b Value:
-  = @tranzlation.value
+  = @translation.value
 
-= link_to 'Edit', edit_tranzlation_path(@tranzlation)
+= link_to 'Edit', edit_translation_path(@translation)
 \|
-= link_to 'Back', tranzlations_path
+= link_to 'Back', translations_path
