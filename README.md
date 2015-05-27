@@ -21,6 +21,7 @@ Or install it yourself as:
 ## Usage
 
 1. Run rake translation_engine:load_locales to load database from files
+1. rake translation_engine:implement_new_database_schema (To add locale and key tables then add foreign keys to Translation table)
 
 ## Contributing
 
