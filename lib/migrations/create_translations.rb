@@ -7,12 +7,12 @@ class CreateTranslations < ActiveRecord::Migration
       t.timestamps
     end
     create_table :keys do |t|
-    	t.string name
-    	t.timestamps
+      t.string name
+      t.timestamps
     end
     create_table :locales do |t|
-    	t.string name
-    	t.timestamps
+      t.string name
+      t.timestamps
     end
   end
-end
+end 
