@@ -32,6 +32,8 @@ namespace :translation_engine do
     add_foreign_keys_to_translations_sql = "ALTER TABLE translations ADD COLUMN locale_id integer, ADD COLUMN translation_key_id integer"
     execute_sql(add_foreign_keys_to_translations_sql)
 
+
+
     Rake::Task["db:schema:dump"].invoke
 
   end
@@ -45,6 +47,20 @@ namespace :translation_engine do
     	translation_key = TranslationKey.find_or_create_by!(name: translation.key)
     	translation.translation_key_id = translation_key.id
       translation.save
+    end
+    
+  end
+
+  desc "Migrate existing locale and key information from Translations to Locales and TranslationKeys"
+  task :wipe_translations_and_reload_from_arc_qa_data => :environment do
+
+    Translation.destroy_all
+
+    directory = TranslationEngine::Engine.root.to_s + "/db/"
+    filename = "#{directory}ARC-QA-Translation-Data.csv"
+
+    CSV.foreach(filename, :headers => false, :col_sep => "\t" ) do |row|
+        puts row.inspect
     end
     
   end
