@@ -3,7 +3,7 @@ class TranslationsController < ApplicationController
 
   # GET /Translations
   def index
-    @Translations = Translation.all
+    @translations = Translation.all
   end
 
   # GET /Translations/1
@@ -12,7 +12,7 @@ class TranslationsController < ApplicationController
 
   # GET /Translations/new
   def new
-    @Translation = Translation.new
+    @translation = Translation.new
   end
 
   # GET /Translations/1/edit
@@ -21,10 +21,10 @@ class TranslationsController < ApplicationController
 
   # POST /Translations
   def create
-    @Translation = Translation.new(Translation_params)
+    @translation = Translation.new(Translation_params)
 
-    if @Translation.save
-      redirect_to @Translation, notice: 'Translation was successfully created.'
+    if @translation.save
+      redirect_to @translation, notice: 'Translation was successfully created.'
     else
       render action: 'new'
     end
@@ -32,8 +32,8 @@ class TranslationsController < ApplicationController
 
   # PATCH/PUT /Translations/1
   def update
-    if @Translation.update(Translation_params)
-      redirect_to @Translation, notice: 'Translation was successfully updated.'
+    if @translation.update(Translation_params)
+      redirect_to @translation, notice: 'Translation was successfully updated.'
     else
       render action: 'edit'
     end
@@ -41,14 +41,14 @@ class TranslationsController < ApplicationController
 
   # DELETE /Translations/1
   def destroy
-    @Translation.destroy
+    @translation.destroy
     redirect_to Translations_url, notice: 'Translation was successfully destroyed.'
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_Translation
-      @Translation = Translation.find(params[:id])
+      @translation = Translation.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
