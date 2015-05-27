@@ -44,6 +44,7 @@ namespace :translation_engine do
     	translation.locale_id = locale.id
     	translation_key = TranslationKey.find_or_create_by!(name: translation.key)
     	translation.translation_key_id = translation_key.id
+      translation.save
     end
     
   end
