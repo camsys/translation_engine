@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.name          = "translation_engine"
   spec.version       = TranslationEngine::VERSION
   spec.authors       = ["Alex Bromley"]
-  spec.email         = ["evilbikes79@gmail.com"]
+  spec.email         = ["abromley@camsys.com"]
   spec.summary       = "Intended to provide translation services to Camsys apps, particularly OneClick and RidePilot."
   spec.description   = "Use I18n to provide translation services."
   spec.homepage      = "https://github.com/camsys/translation_engine"
