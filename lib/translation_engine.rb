@@ -8,15 +8,17 @@ require 'tasks/database_tasks'
 module TranslationEngine
 
   class Engine < ::Rails::Engine
-
-  	initializer :append_migrations do |app|
-      unless app.root.to_s.match root.to_s
-        config.paths["db/migrate"].expanded.each do |expanded_path|
-          app.config.paths["db/migrate"] << expanded_path
-        end
-      end
-    end
     
+  end
+
+  def self.translate_text key_param
+
+      locale = 'en'
+      translation_records = Translation.where("key = ? AND locale = ?", key_param, locale)
+      #should add a Honeybadger call if multiple records returned.
+      translation_records.count > 0 ? translation_text = translation_records[0].value : translation_text = "Translation not found: key = #{key_param}"
+      return translation_text
+
   end
 
 end
