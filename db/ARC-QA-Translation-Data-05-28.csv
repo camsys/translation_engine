@@ -823,9 +823,9 @@ they can help plan trips for you.</p>",false,false,false
 503,tram,,false,2014-09-19 17:14:23.424697,2014-09-19 17:14:23.424697,en,Tram,false,false,false
 504,vehicle,,false,2014-09-19 17:14:23.442825,2014-09-19 17:14:23.442825,en,Vehicle,false,false,false
 493,rideshare,,false,2014-09-19 17:14:23.230156,2014-09-19 19:45:31.450359,en,Carpool,false,false,false
-471,going_to,,false,2014-09-19 17:14:22.951362,2014-12-02 15:40:22.944764,en,"Arriving At<span style=""color:red"">*</span>",false,false,false
+471,going_to,,false,2014-09-19 17:14:22.951362,2014-12-02 15:40:22.944764,en,"Arriving At",false,false,false
 446,trip_time,,false,2014-09-19 17:14:22.626508,2014-10-21 14:46:52.32347,en,Total Trip Time Filter,false,false,false
-474,trip_purposes,,false,2014-09-19 17:14:22.993959,2014-12-02 15:39:50.341919,en,"Trip Purpose<span style=""color:red"">*</span>",false,false,false
+474,trip_purposes,,false,2014-09-19 17:14:22.993959,2014-12-02 15:39:50.341919,en,"Trip Purpose",false,false,false
 447,number_of_transfers,,false,2014-09-19 17:14:22.637718,2014-10-21 14:47:35.64709,en,Number of Transfers Filter,false,false,false
 505,wait,,false,2014-09-19 17:14:23.461683,2014-09-19 17:14:23.461683,en,Wait,false,false,false
 506,mode_transfer,,false,2014-09-19 17:14:23.484873,2014-09-19 17:14:23.484873,en,Transfer,false,false,false
@@ -2208,12 +2208,12 @@ they can help plan trips for you.</p>",false,false,false
 1917,feedback_rating,,false,2014-09-19 17:14:51.455609,2014-09-29 03:23:57.908145,es,"Clasificación (1-peor, 5-mejor)",false,false,false
 1939,finish_trip_planning_options,,false,2014-09-19 17:14:51.740432,2014-09-29 03:27:22.526091,es,Ahora puede hacer una o más de las siguientes para terminar la planificación de su viaje.,false,false,false
 1953,from_lon,,false,2014-09-19 17:14:51.952124,2014-09-29 23:41:11.329056,es,De Lon,false,false,false
-1942,modes,,false,2014-09-19 17:14:51.80387,2014-12-02 15:38:33.679497,es,"Modos<span style=""color:red"">*</span>",false,false,false
-1963,leaving_from,,false,2014-09-19 17:14:52.057837,2014-12-02 15:42:28.970452,es,"Saliendo desde<span style=""color:red"">*</span>",false,false,false
+1942,modes,,false,2014-09-19 17:14:51.80387,2014-12-02 15:38:33.679497,es,"Modos",false,false,false
+1963,leaving_from,,false,2014-09-19 17:14:52.057837,2014-12-02 15:42:28.970452,es,"Saliendo desde",false,false,false
 1960,in_datetime,,false,2014-09-19 17:14:52.027292,2014-09-30 00:33:20.970483,es,Fecha de entrada,false,false,false
 1927,location,,false,2014-09-19 17:14:51.570448,2014-09-30 01:25:10.642499,es,Ubicación,false,false,false
 1925,max_notes,,false,2014-09-19 17:14:51.5423,2014-09-30 01:43:48.419911,es,Notas Máximas ,false,false,false
-1968,trip_purposes,,false,2014-09-19 17:14:52.11242,2014-12-02 15:40:05.255836,es,"Proposito del viaje<span style=""color:red"">*</span>",false,false,false
+1968,trip_purposes,,false,2014-09-19 17:14:52.11242,2014-12-02 15:40:05.255836,es,"Proposito del viaje",false,false,false
 1975,no_thanks_just_plan_it,,false,2014-09-19 17:14:52.191543,2014-09-30 16:51:23.786554,es,"No gracias, solo planear mi viaje",false,false,false
 1941,number_of_transfers,,false,2014-09-19 17:14:51.779091,2014-09-30 17:14:03.722826,es,Numero de Transferencias,false,false,false
 1947,options,,false,2014-09-19 17:14:51.878551,2014-09-30 17:33:00.841745,es,Opciones,false,false,false
@@ -2233,7 +2233,7 @@ they can help plan trips for you.</p>",false,false,false
 1977,trip_options,,false,2014-09-19 17:14:52.214956,2014-10-04 02:10:25.603366,es,Opciones del Viaje,false,false,false
 1983,trip_details,,false,2014-09-19 17:14:52.288917,2014-10-04 01:55:24.212047,es,Detalles del Viaje,false,false,false
 1938,trip_planned_and_saved,,false,2014-09-19 17:14:51.725635,2014-10-04 02:19:08.18603,es,Viaje planificado y guardado,false,false,false
-1965,going_to,,false,2014-09-19 17:14:52.079638,2014-12-02 15:40:36.057248,es,"Llegando a<span style=""color:red"">*</span>",false,false,false
+1965,going_to,,false,2014-09-19 17:14:52.079638,2014-12-02 15:40:36.057248,es,"Llegando a",false,false,false
 1950,trip_restrictions,,false,2014-09-19 17:14:51.917338,2014-10-04 02:25:30.510024,es,Restricciones del viaje ,false,false,false
 1964,type_from_address,,false,2014-09-19 17:14:52.069126,2014-10-04 03:17:20.32103,es,Escriba la dirección de,false,false,false
 1966,type_to_address,,false,2014-09-19 17:14:52.090299,2014-10-04 03:19:05.679995,es,Escriba la dirección a donde va,false,false,false
@@ -2287,7 +2287,7 @@ they can help plan trips for you.</p>",false,false,false
 1999,no_itineraries_found,,false,2014-09-19 17:14:52.485526,2014-09-30 03:20:59.01704,es,No se encontraron itinerarios,false,false,false
 2040,minute.one,,false,2014-09-19 17:14:52.961022,2014-09-30 03:33:54.828409,es,%{count} minuto,false,false,false
 2041,minute.other,,false,2014-09-19 17:14:52.972364,2014-09-30 03:34:16.589872,es,%{count} minutos,false,false,false
-2009,return,,false,2014-09-19 17:14:52.610064,2014-12-02 15:41:46.087038,es,"Regresar<span style=""color:red"">*</span>",false,false,false
+2009,return,,false,2014-09-19 17:14:52.610064,2014-12-02 15:41:46.087038,es,"Regresar",false,false,false
 2013,outbound_itinerary_count,,false,2014-09-19 17:14:52.651144,2014-09-30 17:48:31.838234,es,Cuenta del Itinerario de Salida,false,false,false
 2014,outbound_itinerary_modes,,false,2014-09-19 17:14:52.661341,2014-09-30 17:49:52.419862,es,Modos de Itinerario de salida,false,false,false
 1991,rail,,false,2014-09-19 17:14:52.386948,2014-10-01 16:30:32.046519,es,Tren,false,false,false
@@ -2314,7 +2314,7 @@ they can help plan trips for you.</p>",false,false,false
 2035,was_successfully_updated,,false,2014-09-19 17:14:52.900966,2014-10-04 04:13:06.661588,es,fue actualizado correctamente.,false,false,false
 2043,day.other,,false,2014-09-19 17:14:53.008072,2014-10-04 23:53:41.422996,es,%{count} días,false,false,false
 2046,invalid_location,,false,2014-09-19 17:14:53.059439,2014-10-05 00:52:45.478466,es,Localización invalida.,false,false,false
-2012,outbound,,false,2014-09-19 17:14:52.641071,2014-12-02 15:41:15.754364,es,"Salida<span style=""color:red"">*</span>",false,false,false
+2012,outbound,,false,2014-09-19 17:14:52.641071,2014-12-02 15:41:15.754364,es,"Salida",false,false,false
 2076,cannot_change_time_to_past,,false,2014-09-19 17:14:53.496692,2014-09-19 17:14:53.496692,es,[es]Cannot change trip part time to a past time[/es],false,false,false
 2078,cannot_change_time_to_before_prev_trip_part,,false,2014-09-19 17:14:53.518061,2014-09-19 17:14:53.518061,es,[es]Cannot change trip part time to be before previous trip part[/es],false,false,false
 2087,found_x_places.one,,false,2014-09-19 17:14:53.610197,2014-09-19 17:14:53.610197,es,Encontrados %{count} sitios en la libreta de direcciones. *13*,false,false,false
@@ -2706,18 +2706,18 @@ they can help plan trips for you.</p>",false,false,false
 2500,find_agent,,false,2014-10-10 21:24:49.102877,2014-10-10 21:24:49.102877,en,Find Agent,false,false,false
 2501,no_agent_with_email_address,,false,2014-10-10 21:24:49.117317,2014-10-10 21:24:49.117317,en,We can't find an agent with '%{email}' as their email address.,false,false,false
 2575,map,,false,2014-10-17 17:59:44.279528,2014-10-17 17:59:44.279528,ht,[ht]Map[/ht],false,false,false
-2468,trip_footer_comment,,false,2014-10-10 21:23:41.154572,2015-02-17 14:46:45.036171,en,"<span style=""color:red"">*</span> Required Trip Detail<p>
+2468,trip_footer_comment,,false,2014-10-10 21:23:41.154572,2015-02-17 14:46:45.036171,en," Required Trip Detail<p>
 By use of this application, you agree to the <a href=""https://s3.amazonaws.com/oneclick-arc/bin/Simply+Get+There+Notice+Disclaimer.pdf"" target=""_blank"">terms and conditions</a>.",false,false,false
 2502,you_ve_already_added_this_agent,,false,2014-10-10 21:24:49.139713,2014-10-10 21:24:49.139713,en,You have already added this agent.,false,false,false
 2503,please_save_agents,,false,2014-10-10 21:24:49.163192,2014-10-10 21:24:49.163192,en,Please save agents.,false,false,false
 2504,agency_info,,false,2014-10-10 21:24:49.82594,2014-10-10 21:24:49.82594,en,Agency Information,false,false,false
 2506,multi_od_trip_header_comment,,false,2014-10-10 21:24:58.793896,2014-10-10 21:24:58.793896,en,"",false,false,false
 2507,multi_od_trip_footer_comment,,false,2014-10-10 21:24:58.828158,2014-10-10 21:24:58.828158,en,"",false,false,false
-521,outbound,,false,2014-09-19 17:14:23.716735,2014-12-22 20:18:59.488023,en,"Trip #1 (Outbound)<span style=""color:red"">*</span>",false,false,false
-2478,trip_footer_comment,,false,2014-10-10 21:23:41.203275,2015-02-17 14:47:38.620672,es,"<span style=""color:red"">*</span> Necesario<p>
+521,outbound,,false,2014-09-19 17:14:23.716735,2014-12-22 20:18:59.488023,en,"Trip #1 (Outbound)",false,false,false
+2478,trip_footer_comment,,false,2014-10-10 21:23:41.203275,2015-02-17 14:47:38.620672,es," Necesario<p>
 By use of this application, you agree to the <a href=""https://s3.amazonaws.com/oneclick-arc/bin/Simply+Get+There+Notice+Disclaimer.pdf"" target=""_blank"">terms and conditions</a>.",false,false,false
 2103,logo_format_alert,,false,2014-09-19 17:14:53.853298,2014-09-30 01:32:01.164309,es,Sólo se apoyan formatos de imagenes de logotipos: %{logo_formats},false,false,false
-469,leaving_from,,false,2014-09-19 17:14:22.921453,2014-12-02 15:42:13.890188,en,"Departing From<span style=""color:red"">*</span>",false,false,false
+469,leaving_from,,false,2014-09-19 17:14:22.921453,2014-12-02 15:42:13.890188,en,"Departing From",false,false,false
 1827,about_you,,false,2014-09-19 17:14:50.402678,2014-09-25 15:41:07.621186,es,Acerca de Usted,false,false,false
 1989,bikeshare,,false,2014-09-19 17:14:52.362748,2014-10-01 18:31:38.886567,es,Compartir Bicicleta,false,false,false
 2227,an_email_was_sent_to_email_addresses_join,,false,2014-09-19 17:14:55.430338,2014-09-25 17:02:22.947681,es,Se envió un correo electrónico a %{addresses}.,false,false,false
@@ -2820,7 +2820,7 @@ By use of this application, you agree to the <a href=""https://s3.amazonaws.com/
 2515,legend,,false,2014-10-10 21:25:14.805208,2014-10-21 14:46:23.548559,en,Trip Segment Key,false,false,false
 2505,walk_distance,,false,2014-10-10 21:24:51.280752,2014-10-21 14:48:09.873948,en,Walk Distance Filter,false,false,false
 2540,you_ve_already_added_this_agent,,false,2014-10-10 21:25:59.363837,2014-10-23 01:34:08.382968,es,Usted ha agregado este agente.,false,false,false
-2549,trip_dir,,false,2014-10-10 21:26:13.52006,2014-12-02 15:39:29.618361,es,"Viaje<span style=""color:red"">*</span>",false,false,false
+2549,trip_dir,,false,2014-10-10 21:26:13.52006,2014-12-02 15:39:29.618361,es,"Viaje",false,false,false
 2552,legend,,false,2014-10-10 21:26:21.467232,2014-10-23 01:44:32.690899,es,Leyendas,false,false,false
 2508,trip_parameters,,false,2014-10-10 21:24:59.922201,2014-10-23 21:04:12.085433,en,Trip Details,false,false,false
 2542,agency_info,,false,2014-10-10 21:26:00.216949,2014-10-23 01:47:36.279677,es,Información de la Agencia,false,false,false
@@ -2835,7 +2835,7 @@ By use of this application, you agree to the <a href=""https://s3.amazonaws.com/
 2536,no_comments,,false,2014-10-10 21:25:58.548618,2014-10-23 02:26:19.27956,es,Sin comentarios,false,false,false
 2541,please_save_agents,,false,2014-10-10 21:25:59.375427,2014-10-23 02:33:37.207807,es,"Por favor, guarde los agentes.",false,false,false
 2543,walk_distance,,false,2014-10-10 21:26:01.477505,2014-10-23 02:45:11.768546,es,Distancia caminando,false,false,false
-2512,trip_dir,,false,2014-10-10 21:25:02.959279,2014-12-02 15:39:15.728358,en,"Trip<span style=""color:red"">*</span>",false,false,false
+2512,trip_dir,,false,2014-10-10 21:25:02.959279,2014-12-02 15:39:15.728358,en,"Trip",false,false,false
 2576,preparing_maps,,false,2014-10-17 17:59:44.49664,2014-10-17 17:59:44.49664,ht,[ht]Preparing maps...[/ht],false,false,false
 2582,options_page_splash,,false,2014-10-17 17:59:59.321923,2014-10-17 17:59:59.321923,es,"",false,false,false
 2561,options_page_splash_title,,false,2014-10-17 17:59:18.75275,2014-10-21 14:44:38.949807,en,Eligibility and Accommodations,false,false,false
@@ -2956,8 +2956,8 @@ No se puede cambiar el viaje a tiempo parcial hasta después que el viaje haya c
 2664,bicycle,,false,2014-11-23 03:28:23.283749,2014-11-23 03:28:23.283749,en,Bicycle,false,false,false
 259,send_your_feedback,,false,2014-09-19 17:14:19.734487,2014-11-26 16:42:24.454673,en,"<a href=""mailto:simplygetthere@atlantaregional.com?Subject=1-Click"">Contact Us</a>",false,false,false
 1749,send_your_feedback,,false,2014-09-19 17:14:49.029145,2014-11-26 16:42:57.90857,es,"<a href=""mailto:simplygetthere@atlantaregional.com?Subject=1-Click"">Comentarios</a>",false,false,false
-448,modes,,false,2014-09-19 17:14:22.649173,2014-12-02 15:37:43.746178,en,"Trip Options<span style=""color:red"">*</span>",false,false,false
-518,return,,false,2014-09-19 17:14:23.679168,2014-12-02 15:41:28.943773,en," Trip #2 (Return if round trip)<span style=""color:red"">*</span>",false,false,false
+448,modes,,false,2014-09-19 17:14:22.649173,2014-12-02 15:37:43.746178,en,"Trip Options",false,false,false
+518,return,,false,2014-09-19 17:14:23.679168,2014-12-02 15:41:28.943773,en," Trip #2 (Return if round trip)",false,false,false
 2667,feedback_email_header,,false,2014-12-08 01:33:03.545589,2014-12-08 01:33:03.545589,en,"",false,false,false
 2665,generic_email_header,,false,2014-12-08 01:33:03.502749,2014-12-08 01:33:03.502749,en,"",false,false,false
 2668,feedback_email_footer,,false,2014-12-08 01:33:03.560922,2014-12-08 01:33:03.560922,en,"",false,false,false
