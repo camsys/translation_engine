@@ -2,12 +2,16 @@ require 'rake'
 require 'active_record'
 
 class Locale < ActiveRecord::Base
+
 end
 
 class TranslationKey < ActiveRecord::Base
+
 end
 
 class Translation < ActiveRecord::Base
+  belongs_to :locale
+  belongs_to :translation_key
 end
 
 namespace :translation_engine do
@@ -32,8 +36,6 @@ namespace :translation_engine do
     add_foreign_keys_to_translations_sql = "ALTER TABLE translations ADD COLUMN locale_id integer, ADD COLUMN translation_key_id integer"
     execute_sql(add_foreign_keys_to_translations_sql)
 
-
-
     Rake::Task["db:schema:dump"].invoke
 
   end
@@ -52,15 +54,28 @@ namespace :translation_engine do
   end
 
   desc "Migrate existing locale and key information from Translations to Locales and TranslationKeys"
-  task :wipe_translations_and_reload_from_arc_qa_data => :environment do
+  task :wipe_and_reload_from_arc_qa_data => :environment do
 
     Translation.destroy_all
+    TranslationKey.destroy_all
+    Locale.destroy_all
 
     directory = TranslationEngine::Engine.root.to_s + "/db/"
-    filename = "#{directory}ARC-QA-Translation-Data.csv"
+    filename = "#{directory}ARC-QA-Translation-Data-05-28.csv"
 
-    CSV.foreach(filename, :headers => false, :col_sep => "\t" ) do |row|
-        puts row.inspect
+    CSV.foreach(filename, :headers => true) do |row|
+
+        puts row
+
+        row_hash = row.to_hash.delete(:id)
+        new_translation = Translation.create(row_hash)
+        locale = Locale.find_or_create_by(:name => row["locale"])
+        new_translation.locale_id = locale.id
+        translation_key = TranslationKey.find_or_create_by(:name => row["key"])
+        new_translation.translation_key_id = translation_key.id
+
+        new_translation.save
+
     end
     
   end
