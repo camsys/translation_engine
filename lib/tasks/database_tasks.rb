@@ -63,11 +63,9 @@ namespace :translation_engine do
     directory = TranslationEngine::Engine.root.to_s + "/db/"
     filename = "#{directory}ARC-QA-Translation-Data-05-28.csv"
 
-    CSV.foreach(filename, :headers => true) do |row|
+    CSV.foreach(filename, :headers => true) do |row|        
 
-        puts row
-
-        row_hash = row.to_hash.delete(:id)
+        row_hash = row.to_hash.except("id").except("locale")
         new_translation = Translation.create(row_hash)
         locale = Locale.find_or_create_by(:name => row["locale"])
         new_translation.locale_id = locale.id
