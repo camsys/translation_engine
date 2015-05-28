@@ -32,7 +32,7 @@ class TranslationsController < ApplicationController
 
   # PATCH/PUT /Translations/1
   def update
-    if @translation.update(Translation_params)
+    if @translation.update(translation_params)
       redirect_to @translation, notice: 'Translation was successfully updated.'
     else
       render action: 'edit'
@@ -47,12 +47,12 @@ class TranslationsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_Translation
+    def set_translation
       @translation = Translation.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
-    def Translation_params
-      params.require(:Translation).permit(:locale_id, :key, :value)
+    def translation_params
+      params.require(:Translation).permit(:locale_id, :translation_key_id, :value)
     end
 end
