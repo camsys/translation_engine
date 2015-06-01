@@ -1,5 +1,6 @@
 class TranslationsController < ApplicationController
-  before_action :set_Translation, only: [:show, :edit, :update, :destroy]
+  
+  before_action :set_translation, only: [:show, :edit, :update, :destroy]
 
   # GET /Translations
   def index
@@ -21,10 +22,10 @@ class TranslationsController < ApplicationController
 
   # POST /Translations
   def create
-    @translation = Translation.new(Translation_params)
+    @translation = Translation.new(translation_params)
 
     if @translation.save
-      redirect_to @translation, notice: 'Translation was successfully created.'
+      redirect_to translation_engine.translation_path(@translation), notice: 'Translation was successfully created.'
     else
       render action: 'new'
     end
@@ -42,7 +43,7 @@ class TranslationsController < ApplicationController
   # DELETE /Translations/1
   def destroy
     @translation.destroy
-    redirect_to Translations_url, notice: 'Translation was successfully destroyed.'
+    redirect_to translations_url, notice: 'Translation was successfully destroyed.'
   end
 
   private
@@ -53,6 +54,6 @@ class TranslationsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def translation_params
-      params.require(:Translation).permit(:locale_id, :translation_key_id, :value)
+      params.require(:translation).permit(:locale_id, :translation_key_id, :value)
     end
 end
