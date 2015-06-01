@@ -26,6 +26,20 @@ module TranslationEngine
     end
   end
 
+  def self.show_translation_item?(key_param)
+    begin
+      translation_key_id = TranslationKey.where("name = ?",key_param).first.id
+      locale_id = Locale.where("name = ?",I18n.locale).first.id
+      translation_records = Translation.where("translation_key_id = ? AND locale_id = ?", translation_key_id, locale_id)
+      #should add a Honeybadger call if multiple records returned.
+      translation_records.count > 0 ? translation_found = true : translation_found = false
+      return translation_found
+    rescue => e
+      return "Translation not found: key = #{key_param}"
+    end
+  end
+
+
   #oneclick_short %A, %B %-d
   #oneclick_long %A, %B %-d %Y
 
