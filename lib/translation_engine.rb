@@ -19,8 +19,35 @@ module TranslationEngine
 	    #should add a Honeybadger call if multiple records returned.
 	    translation_records.count > 0 ? translation_text = translation_records[0].value : translation_text = "Translation not found: key = #{key_param}"
 	    return translation_text
-    rescue
+    rescue => e
       return "Translation not found: key = #{key_param}"
+    end
+  end
+
+  #oneclick_short %A, %B %-d
+  #oneclick_long %A, %B %-d %Y
+
+  def self.localize_date_short_format(date_param) 
+    begin
+      return I18n.l date_param, :format => "%A, %B %-d"
+    rescue => e
+      return "Error localizing date ({#e})"
+    end
+  end
+
+  def self.localize_date_long_format(date_param)
+    begin
+      return I18n.l date_param, :format => "%A, %B %-d %Y"
+    rescue => e
+      return "Error localizing date ({#e})"
+    end
+  end
+
+  def self.localize_time(time_param)
+    begin
+      return I18n.l time_param, :format => "%-I:%M %p"
+    rescue => e
+      return "Error localizing time ({#e})"
     end
   end
 
