@@ -8,6 +8,8 @@ require 'tasks/database_tasks'
 module TranslationEngine
 
   class Engine < ::Rails::Engine
+
+    engine_name 'translation_engine'
     
   end
 
