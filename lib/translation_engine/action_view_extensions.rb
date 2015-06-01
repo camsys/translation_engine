@@ -2,7 +2,7 @@ module ActionViewExtensions
 
   extend ActiveSupport::Concern
 
-  def translate_helper_translate(key_param)
+  def translate_helper(key_param)
     begin
       translation_key_id = TranslationKey.where("name = ?",key_param).first.id
       locale_id = Locale.where("name = ?",I18n.locale).first.id
