@@ -2,6 +2,6 @@
 
 = render 'form'
 
-= link_to 'Show', @translation
+= link_to 'Show', translation_engine.translations_path(@translation)
 \|
-= link_to 'Back', translations_path
+= link_to 'Back', translation_engine.translations_path

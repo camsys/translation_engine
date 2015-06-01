@@ -1,23 +1,24 @@
+= link_to 'New translation', translation_engine.new_translation_path
+
 %h1 Listing translations
 
-%table
-  %tr
-    %th Locale
-    %th Key
-    %th Value
-    %th
-    %th
-    %th
+.row
+  .col-md-1 Locale
+  .col-md-3 Key
+  .col-md-6 Value
+  .col-md-2
 
-  - @translations.each do |translation|
-    %tr
-      %td= translation.locale_id
-      %td= translation.key
-      %td= translation.value
-      %td= link_to 'Show', translation_engine.translation_path(translation.id)
-      %td= link_to 'Edit', translation_engine.edit_translation_path(translation)
-      %td= link_to 'Destroy', translation_engine.translation_path(translation), :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New translation', translation_engine.new_translation_path
+- @translations.each do |translation|
+  .row
+    .col-md-1
+      =translation.locale_id
+    .col-md-3{:style => "word-wrap: break-word;"}
+      =translation.key
+    .col-md-6{:style => "word-wrap: break-word;"}
+      =translation.value
+    .col-md-2
+      =link_to 'Show', translation_engine.translation_path(translation.id)
+      \|
+      =link_to 'Edit', translation_engine.edit_translation_path(translation)
+      \|
+      =link_to 'Destroy', translation_engine.translation_path(translation), :method => :delete, :data => { :confirm => 'Are you sure?' }

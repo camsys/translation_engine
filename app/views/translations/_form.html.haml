@@ -1,9 +1,9 @@
-= simple_form_for(@translation) do |f|
+= simple_form_for @translation, :url => translation_engine.translations_path, :method => 'post' do |f|
   = f.error_notification
 
   .form-inputs
     = f.input :locale_id
-    = f.input :key
+    = f.input :translation_key_id
     = f.input :value
 
   .form-actions
