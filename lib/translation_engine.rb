@@ -20,6 +20,7 @@ module TranslationEngine
 	    translation_records = Translation.where("translation_key_id = ? AND locale_id = ?", translation_key_id, locale_id)
 	    #should add a Honeybadger call if multiple records returned.
 	    translation_records.count > 0 ? translation_text = translation_records[0].value : translation_text = "Translation not found: key = #{key_param}"
+      translation_text.sub! '%{age}', '65'
 	    return translation_text
     rescue => e
       return "Translation not found: key = #{key_param}"
