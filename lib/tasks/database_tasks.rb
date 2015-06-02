@@ -72,6 +72,12 @@ namespace :translation_engine do
         translation_key = TranslationKey.find_or_create_by(:name => row["key"])
         new_translation.translation_key_id = translation_key.id
 
+        if new_translation.value.present?
+          if new_translation.value[0].include? ","
+            new_translation.value = new_translation.value[1..new_translation.value.length]
+          end
+        end
+
         new_translation.save
 
     end
