@@ -1433,7 +1433,7 @@ they can help plan trips for you.</p>",false,false,false
 1029,date.formats.short,,false,2014-09-19 16:25:49.00305,2014-09-19 16:25:49.00305,en,%b %d,false,false,false
 1030,date.formats.oneclick_long,,false,2014-09-19 16:25:49.011386,2014-09-19 16:25:49.011386,en,"%A, %B %-d %Y",false,false,false
 1031,date.formats.oneclick_short,,false,2014-09-19 16:25:49.019626,2014-09-19 16:25:49.019626,en,"%A, %B %-d",false,false,false
-1032,date.month_names,,false,2014-09-19 16:25:49.026874,2014-09-19 16:25:49.026874,en,",January,February,March,April,May,June,July,August,September,October,November,December",false,false,true
+1032,date.month_names,,false,2014-09-19 16:25:49.026874,2014-09-19 16:25:49.026874,en,"January,February,March,April,May,June,July,August,September,October,November,December",false,false,true
 1033,date.order,,false,2014-09-19 16:25:49.034637,2014-09-19 16:25:49.034637,en,"month,day,year",false,false,true
 1034,time.am,,false,2014-09-19 16:25:49.042195,2014-09-19 16:25:49.042195,en,am,false,false,false
 1035,time.formats.default,,false,2014-09-19 16:25:49.049457,2014-09-19 16:25:49.049457,en,"%a, %d %b %Y %I:%M:%S %p %Z",false,false,false
@@ -2914,7 +2914,7 @@ Sent by Jacksonville Transportation Authority. Under Florida’s very broad publ
 2459,date.formats.short,,false,2014-09-19 16:25:59.473338,2014-09-19 16:25:59.473338,ht,%b %d,false,false,false
 2460,date.formats.oneclick_long,,false,2014-09-19 16:25:59.479305,2014-09-19 16:25:59.479305,ht,"%A, %B %-d %Y",false,false,false
 2461,date.formats.oneclick_short,,false,2014-09-19 16:25:59.485446,2014-09-19 16:25:59.485446,ht,"%A, %B %-d",false,false,false
-2462,date.month_names,,false,2014-09-19 16:25:59.493087,2014-09-19 16:25:59.493087,ht,",January,February,March,April,May,June,July,August,September,October,November,December",false,false,true
+2462,date.month_names,,false,2014-09-19 16:25:59.493087,2014-09-19 16:25:59.493087,ht,"January,February,March,April,May,June,July,August,September,October,November,December",false,false,true
 2463,date.order,,false,2014-09-19 16:25:59.500089,2014-09-19 16:25:59.500089,ht,"month,day,year",false,false,true
 2464,time.am,,false,2014-09-19 16:25:59.506382,2014-09-19 16:25:59.506382,ht,am,false,false,false
 2465,time.formats.default,,false,2014-09-19 16:25:59.512533,2014-09-19 16:25:59.512533,ht,"%a, %d %b %Y %I:%M:%S %p %Z",false,false,false

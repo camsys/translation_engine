@@ -1282,7 +1282,7 @@ they can help plan trips for you.</p>",false,false,false
 927,date.formats.short,,false,2014-09-19 19:13:46.10034,2014-09-19 19:13:46.10034,en,%b %d,false,false,false
 928,date.formats.oneclick_long,,false,2014-09-19 19:13:46.107501,2014-09-19 19:13:46.107501,en,"%A, %B %-d %Y",false,false,false
 929,date.formats.oneclick_short,,false,2014-09-19 19:13:46.114983,2014-09-19 19:13:46.114983,en,"%A, %B %-d",false,false,false
-930,date.month_names,,false,2014-09-19 19:13:46.12219,2014-09-19 19:13:46.12219,en,",January,February,March,April,May,June,July,August,September,October,November,December",false,false,true
+930,date.month_names,,false,2014-09-19 19:13:46.12219,2014-09-19 19:13:46.12219,en,"January,February,March,April,May,June,July,August,September,October,November,December",false,false,true
 931,date.order,,false,2014-09-19 19:13:46.130525,2014-09-19 19:13:46.130525,en,"month,day,year",false,false,true
 932,time.am,,false,2014-09-19 19:13:46.138778,2014-09-19 19:13:46.138778,en,am,false,false,false
 933,time.formats.default,,false,2014-09-19 19:13:46.147555,2014-09-19 19:13:46.147555,en,"%a, %d %b %Y %I:%M:%S %p %Z",false,false,false
@@ -2900,7 +2900,7 @@ No se puede cambiar el viaje a tiempo parcial hasta después que el viaje haya c
 2401,date.formats.oneclick_long,,false,2014-09-19 19:13:57.340459,2014-09-19 19:13:57.340459,ht,"%A, %B %-d %Y",false,false,false
 2483,review_header_comment,,false,2014-10-10 21:27:55.886363,2014-10-10 21:27:55.886363,ht,"",false,false,false
 2402,date.formats.oneclick_short,,false,2014-09-19 19:13:57.346944,2014-09-19 19:13:57.346944,ht,"%A, %B %-d",false,false,false
-2403,date.month_names,,false,2014-09-19 19:13:57.35333,2014-09-19 19:13:57.35333,ht,",January,February,March,April,May,June,July,August,September,October,November,December",false,false,true
+2403,date.month_names,,false,2014-09-19 19:13:57.35333,2014-09-19 19:13:57.35333,ht,"January,February,March,April,May,June,July,August,September,October,November,December",false,false,true
 2404,date.order,,false,2014-09-19 19:13:57.359775,2014-09-19 19:13:57.359775,ht,"month,day,year",false,false,true
 2405,time.am,,false,2014-09-19 19:13:57.366143,2014-09-19 19:13:57.366143,ht,am,false,false,false
 2406,time.formats.default,,false,2014-09-19 19:13:57.372443,2014-09-19 19:13:57.372443,ht,"%a, %d %b %Y %I:%M:%S %p %Z",false,false,false

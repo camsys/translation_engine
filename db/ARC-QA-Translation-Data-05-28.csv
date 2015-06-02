@@ -1209,7 +1209,7 @@ they can help plan trips for you.</p>",false,false,false
 891,date.formats.short,,false,2014-09-19 17:14:31.450221,2014-09-19 17:14:31.450221,en,%b %d,false,false,false
 892,date.formats.oneclick_long,,false,2014-09-19 17:14:31.46869,2014-09-19 17:14:31.46869,en,"%A, %B %-d %Y",false,false,false
 893,date.formats.oneclick_short,,false,2014-09-19 17:14:31.482951,2014-09-19 17:14:31.482951,en,"%A, %B %-d",false,false,false
-894,date.month_names,,false,2014-09-19 17:14:31.49913,2014-09-19 17:14:31.49913,en,",January,February,March,April,May,June,July,August,September,October,November,December",false,false,true
+894,date.month_names,,false,2014-09-19 17:14:31.49913,2014-09-19 17:14:31.49913,en,"January,February,March,April,May,June,July,August,September,October,November,December",false,false,true
 895,date.order,,false,2014-09-19 17:14:31.512061,2014-09-19 17:14:31.512061,en,"month,day,year",false,false,true
 896,time.am,,false,2014-09-19 17:14:31.530884,2014-09-19 17:14:31.530884,en,am,false,false,false
 897,time.formats.default,,false,2014-09-19 17:14:31.551876,2014-09-19 17:14:31.551876,en,"%a, %d %b %Y %I:%M:%S %p %Z",false,false,false
@@ -1916,7 +1916,7 @@ they can help plan trips for you.</p>",false,false,false
 1636,date.formats.short,,false,2014-09-19 17:14:46.234133,2014-09-19 17:14:46.234133,ht,%b %d,false,false,false
 1637,date.formats.oneclick_long,,false,2014-09-19 17:14:46.246591,2014-09-19 17:14:46.246591,ht,"%A, %B %-d %Y",false,false,false
 1638,date.formats.oneclick_short,,false,2014-09-19 17:14:46.263624,2014-09-19 17:14:46.263624,ht,"%A, %B %-d",false,false,false
-1639,date.month_names,,false,2014-09-19 17:14:46.280034,2014-09-19 17:14:46.280034,ht,",January,February,March,April,May,June,July,August,September,October,November,December",false,false,true
+1639,date.month_names,,false,2014-09-19 17:14:46.280034,2014-09-19 17:14:46.280034,ht,"January,February,March,April,May,June,July,August,September,October,November,December",false,false,true
 1640,date.order,,false,2014-09-19 17:14:46.296162,2014-09-19 17:14:46.296162,ht,"month,day,year",false,false,true
 1641,time.am,,false,2014-09-19 17:14:46.342071,2014-09-19 17:14:46.342071,ht,am,false,false,false
 1642,time.formats.default,,false,2014-09-19 17:14:46.405099,2014-09-19 17:14:46.405099,ht,"%a, %d %b %Y %I:%M:%S %p %Z",false,false,false
