@@ -3521,3 +3521,9 @@ Please <a href=""http://www.atlgetthere.com"" target=""_blank"">click here</a> f
 3215,trip_parts,,false,2015-05-18 13:10:23.687791,2015-05-18 13:10:23.687791,es,[es]Trip Parts[/es],false,false,false
 3216,broswer_warning,,false,2015-05-18 13:10:27.276301,2015-05-18 13:10:27.276301,es,"[es]Warning! Your current browser is outdated. While you may still use 1-Click, some of the features may not function. We recommend that you upgrade to the latest version of your browser and try again.[/es]",false,false,false
 3217,use_gtfs_colors,,false,2015-05-22 19:09:59.705371,2015-05-22 19:09:59.705371,en,Use GTFS Colors,false,false,false
+3218,minute,,false,2015-05-22 19:09:59.705371,2015-05-22 19:09:59.705371,en,minute,false,false,false
+3219,hour,,false,2015-05-22 19:09:59.705371,2015-05-22 19:09:59.705371,en,hour,false,false,false
+3220,day,,false,2015-05-22 19:09:59.705371,2015-05-22 19:09:59.705371,en,day,false,false,false
+3221,minute,,false,2015-05-22 19:09:59.705371,2015-05-22 19:09:59.705371,es,minuto,false,false,false
+3222,hour,,false,2015-05-22 19:09:59.705371,2015-05-22 19:09:59.705371,es,hora,false,false,false
+3223,day,,false,2015-05-22 19:09:59.705371,2015-05-22 19:09:59.705371,es,dia,false,false,false
