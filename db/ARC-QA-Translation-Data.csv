@@ -1209,7 +1209,7 @@ they can help plan trips for you.</p>,FALSE,FALSE,FALSE
 891,date.formats.short,,FALSE,14:31.4,14:31.4,en,%b %d,FALSE,FALSE,FALSE
 892,date.formats.oneclick_long,,FALSE,14:31.5,14:31.5,en,%A, %B %-d %Y,FALSE,FALSE,FALSE
 893,date.formats.oneclick_short,,FALSE,14:31.5,14:31.5,en,%A, %B %-d,FALSE,FALSE,FALSE
-894,date.month_names,,FALSE,14:31.5,14:31.5,en,,January,February,March,April,May,June,July,August,September,October,November,December,FALSE,FALSE,TRUE
+894,date.month_names,,FALSE,14:31.5,14:31.5,en,January,February,March,April,May,June,July,August,September,October,November,December,FALSE,FALSE,TRUE
 895,date.order,,FALSE,14:31.5,14:31.5,en,month,day,year,FALSE,FALSE,TRUE
 896,time.am,,FALSE,14:31.5,14:31.5,en,am,FALSE,FALSE,FALSE
 897,time.formats.default,,FALSE,14:31.6,14:31.6,en,%a, %d %b %Y %I:%M:%S %p %Z,FALSE,FALSE,FALSE
@@ -1916,7 +1916,7 @@ they can help plan trips for you.</p>,FALSE,FALSE,FALSE
 1636,date.formats.short,,FALSE,14:46.2,14:46.2,ht,%b %d,FALSE,FALSE,FALSE
 1637,date.formats.oneclick_long,,FALSE,14:46.2,14:46.2,ht,%A, %B %-d %Y,FALSE,FALSE,FALSE
 1638,date.formats.oneclick_short,,FALSE,14:46.3,14:46.3,ht,%A, %B %-d,FALSE,FALSE,FALSE
-1639,date.month_names,,FALSE,14:46.3,14:46.3,ht,,January,February,March,April,May,June,July,August,September,October,November,December,FALSE,FALSE,TRUE
+1639,date.month_names,,FALSE,14:46.3,14:46.3,ht,January,February,March,April,May,June,July,August,September,October,November,December,FALSE,FALSE,TRUE
 1640,date.order,,FALSE,14:46.3,14:46.3,ht,month,day,year,FALSE,FALSE,TRUE
 1641,time.am,,FALSE,14:46.3,14:46.3,ht,am,FALSE,FALSE,FALSE
 1642,time.formats.default,,FALSE,14:46.4,14:46.4,ht,%a, %d %b %Y %I:%M:%S %p %Z,FALSE,FALSE,FALSE
