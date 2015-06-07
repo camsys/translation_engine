@@ -7,7 +7,7 @@ TODO: Write a gem description
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'translation_engine'
+gem 'translation_engine', github: 'camsys/translation_engine'
 ```
 
 And then execute:
