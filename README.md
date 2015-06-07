@@ -14,15 +14,12 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install translation_engine
-
 ## Usage
 
 1. Run rake translation_engine:load_locales to load database from files
 1. rake translation_engine:implement_new_database_schema (To add locale and key tables then add foreign keys to Translation table)
-1. rake translation_engine:wipe_and_reload_from_arc_qa_data (other app specific taks forthcoming)
+1. rake translation_engine:migrate_existing_translation_data
+1. To enable editing in your app, mount the translation_engine routes in your routes.rb file: mount TranslationEngine::Engine => "/translation_engine"
 
 ## Contributing
 

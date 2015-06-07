@@ -10,7 +10,7 @@ class TranslationKey < ActiveRecord::Base
 end
 
 class Translation < ActiveRecord::Base
-  belongs_to :locale
+  #belongs_to :locale
   belongs_to :translation_key
 
   validates :locale_id, :uniqueness => {:scope => [:locale_id, :translation_key_id]}
@@ -47,11 +47,14 @@ namespace :translation_engine do
   task :migrate_existing_translation_data => :environment do
 
   	Translation.all.each_with_index do |translation,idx|
-    	locale = Locale.find_or_create_by!(name: translation.locale)
-    	translation.locale_id = locale.id
-    	translation_key = TranslationKey.find_or_create_by!(name: translation.key)
-    	translation.translation_key_id = translation_key.id
-      translation.save
+      if translation.locale.present?
+    	  locale = Locale.find_or_create_by!(name: translation.locale)
+    	  translation.locale_id = locale.id
+    	  translation_key = TranslationKey.find_or_create_by!(name: translation.key)
+    	  translation.translation_key_id = translation_key.id
+        translation.value = translation.value[1..translation.value.to_s.length] if translation.value.to_s[0] == ","
+        translation.save
+      end
     end
     
   end
