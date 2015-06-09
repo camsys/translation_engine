@@ -10,7 +10,7 @@ module ActionViewExtensions
       #should add a Honeybadger call if multiple records returned.
       translation_records.count > 0 ? translation_text = translation_records[0].value : translation_text = "Translation not found: key = #{key_param}"
       translation_text.sub! '%{age}', '65'
-      return translation_text
+      return translation_text.html_safe
     rescue
       return "Translation not found: key = #{key_param}"
     end
