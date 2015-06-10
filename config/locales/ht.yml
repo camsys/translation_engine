@@ -52,6 +52,7 @@ ht:
   my_home_chkbox_label: "[ht]This is my home[/ht]"
   more_about_this_initiative: '[ht]More About This Initiative[/ht]'
   send_your_feedback: '[ht]Send your Feedback[/ht]'
+  test_translation: '[ht]test translation text[/ht]'
 
   # Agent View strings
   find_traveler: "[ht]Find Traveler[/ht]"
