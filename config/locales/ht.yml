@@ -892,6 +892,9 @@ ht:
   advanced_book_day_range_msg: "[ht]Advanced booking days: please make sure day range is valid.[/ht]"
 
   # user messaging
+  message: '[ht]Message[/ht]'
+  select_all: '[ht]Select All[/ht]'
+  select_none: '[ht]Select None[/ht]'
   send_message: '[ht]Send Message[/ht]'
   message_body: '[ht]Message body[/ht]'
   message_from_date: '[ht]From date[/ht]'
