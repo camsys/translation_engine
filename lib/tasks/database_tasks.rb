@@ -2,19 +2,18 @@ require 'rake'
 require 'active_record'
 
 class Locale < ActiveRecord::Base
-
+  self.primary_key = 'id'
 end
 
 class TranslationKey < ActiveRecord::Base
-
+  self.primary_key = 'id'
 end
 
 class Translation < ActiveRecord::Base
+  self.primary_key = 'id'
   #belongs_to :locale
   belongs_to :translation_key
-
-  validates :locale_id, :uniqueness => {:scope => [:locale_id, :translation_key_id]}
-  validates :translation_key_id, :uniqueness => {:scope => [:locale_id, :translation_key_id]}
+  belongs_to :locale
 end
 
 namespace :translation_engine do
@@ -47,8 +46,10 @@ namespace :translation_engine do
   task :migrate_existing_translation_data => :environment do
 
   	Translation.all.each_with_index do |translation,idx|
-      if translation.locale.present?
-    	  locale = Locale.find_or_create_by!(name: translation.read_attribute(:locale))
+      old_locale_value = translation.read_attribute(:locale)
+      if old_locale_value.present?
+    	  locale = Locale.find_or_create_by!(name: old_locale_value)
+        locale = Locale.find_by_name(old_locale_value)
     	  translation.locale_id = locale.id
     	  translation_key = TranslationKey.find_or_create_by!(name: translation.key)
     	  translation.translation_key_id = translation_key.id
