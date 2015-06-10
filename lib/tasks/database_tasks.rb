@@ -48,7 +48,7 @@ namespace :translation_engine do
 
   	Translation.all.each_with_index do |translation,idx|
       if translation.locale.present?
-    	  locale = Locale.find_or_create_by!(name: translation.locale)
+    	  locale = Locale.find_or_create_by!(name: translation.read_attribute(:locale))
     	  translation.locale_id = locale.id
     	  translation_key = TranslationKey.find_or_create_by!(name: translation.key)
     	  translation.translation_key_id = translation_key.id
