@@ -4,6 +4,7 @@ module ActionViewExtensions
 
   def translate_helper(key_param)
     begin
+      return key_param.to_s if I18n.locale == :tags
       translation_key_id = TranslationKey.where("name = ?",key_param).first.id
       locale_id = Locale.where("name = ?",I18n.locale).first.id
       translation_records = Translation.where("translation_key_id = ? AND locale_id = ?", translation_key_id, locale_id)
