@@ -938,6 +938,19 @@ es:
   before_msg: "[es]must be before [/es]"
   advanced_book_day_range_msg: "[es]Advanced booking days: please make sure day range is valid.[/es]"
 
+  # user messaging
+  message: '[es]Message[/es]'
+  select_all: '[es]Select All[/es]'
+  select_none: '[es]Select None[/es]'
+  send_message: '[es]Send Message[/es]'
+  message_body: '[es]Message body[/es]'
+  message_from_date: '[es]From date[/es]'
+  message_to_date: '[es]To date[/es]'
+  from_date_not_later_than_to_date: "[es]Delivery from date should not be later than to date[/es]"
+  you_have_unread_message: '[es]You have unread message[/es]'
+  unread_message: '[es]Unread message[/es]'
+  mark_as_read: '[es]Mark as read[/es]'
+
   locales:
     en: "English"
     es: "En Español"

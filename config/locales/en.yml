@@ -976,6 +976,19 @@ en:
   before_msg: "must be before "
   advanced_book_day_range_msg: "Advanced booking days: please make sure day range is valid."
 
+  # user messaging
+  message: 'Message'
+  select_all: 'Select All'
+  select_none: 'Select None'
+  send_message: 'Send Message'
+  message_body: 'Message body'
+  message_from_date: 'From date'
+  message_to_date: 'To date'
+  from_date_not_later_than_to_date: "Delivery from date should not be later than to date"
+  you_have_unread_message: 'You have unread message'
+  unread_message: 'Unread message'
+  mark_as_read: 'Mark as read'
+
   date:
     abbr_day_names:
     - Sun
