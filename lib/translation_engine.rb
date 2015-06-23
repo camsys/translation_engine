@@ -12,20 +12,40 @@ module TranslationEngine
     
   end
 
-  def self.translate_text(key_param)
+  def self.translate_text(key_param, *interpolations)
   	begin
+
+      #TAGS MODE
       return "[" + key_param.to_s + "]" if I18n.locale == :tags
-	    translation_key_id = TranslationKey.where("name = ?",key_param).first.id
+
+      #KEY
+	    translation_key_id = TranslationKey.where("name = ?",key_param.to_s).first.id
+
+      #LOCALE
 	    locale_id = Locale.where("name = ?",I18n.locale).first.id
+
+      #TRANSLATION
 	    translation_records = Translation.where("translation_key_id = ? AND locale_id = ?", translation_key_id, locale_id)
-	    #should add a Honeybadger call if multiple records returned.
 	    translation_records.count > 0 ? translation_text = translation_records[0].value : translation_text = "Translation not found: key = #{key_param}"
-      translation_text.sub! '%{age}', '65'
+
+      #INTERPOLATIONS
+      if interpolations.present?
+        interpolations = interpolations[0]
+        interpolations.keys.each do |interpolation_key|
+          formatted_interpolation_key = "%{#{interpolation_key}}"
+          translation_text.sub! formatted_interpolation_key, interpolations[interpolation_key].to_s if translation_text.sub!(formatted_interpolation_key, interpolations[interpolation_key].to_s).present?
+        end
+      end
+
 	    return translation_text
+
     rescue => e
+      binding.pry
       return "Translation not found: key = #{key_param}"
     end
+
   end
+
 
   def self.show_translation_item?(key_param)
     begin
