@@ -26,11 +26,12 @@ module TranslationEngine
 
       #TRANSLATION
 	    translation_records = Translation.where("translation_key_id = ? AND locale_id = ?", translation_key_id, locale_id)
-	    translation_records.count > 0 ? translation_text = translation_records[0].value : translation_text = "Translation not found: key = #{key_param}"
+	    translation_records.count > 0 ? translation_text = translation_records.first.value : translation_text = "Translation not found: key = #{key_param}"
 
       #INTERPOLATIONS
       if interpolations.present? && interpolations != [[]]
         interpolations = interpolations[0]
+        interpolations = interpolations[0] if interpolations.class == Array
         interpolations.keys.each do |interpolation_key|
           formatted_interpolation_key = "%{#{interpolation_key}}"
           translation_text.sub! formatted_interpolation_key, interpolations[interpolation_key].to_s if translation_text.sub!(formatted_interpolation_key, interpolations[interpolation_key].to_s).present?
