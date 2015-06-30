@@ -15,8 +15,6 @@ module TranslationEngine
   def self.translate_text(key_param, *interpolations)
   	begin
 
-      binding.pry if key_param == "rating_submitted_for_approval" || key_param == :rating_submitted_for_approval
-
       #TAGS MODE
       return "[" + key_param.to_s + "]" if I18n.locale == :tags
 
