@@ -63,6 +63,10 @@ module TranslationEngine
 
   def self.show_translation_item?(key_param)
     begin
+
+      #check for tags mode
+      return true if I18n.locale == :tags
+
       translation_key_id = TranslationKey.where("name = ?",key_param).first.id
       locale_id = Locale.where("name = ?",I18n.locale).first.id
       translation_records = Translation.where("translation_key_id = ? AND locale_id = ?", translation_key_id, locale_id)
@@ -72,6 +76,7 @@ module TranslationEngine
     rescue => e
       return false
     end
+    
   end
 
   def self.translation_exists?(key_param)
