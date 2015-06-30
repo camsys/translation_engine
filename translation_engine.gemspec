@@ -19,9 +19,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.required_ruby_version = "2.1.1"
-
-  spec.add_dependency "rails", "4.0.3"
+  spec.add_dependency "rails", "~>4.1.0"
   spec.add_dependency "sass-rails"
   spec.add_dependency "pg"
   spec.add_dependency "i18n-active_record"
