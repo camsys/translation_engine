@@ -1,5 +1,6 @@
 require 'rake'
 require 'active_record'
+require 'migrations/create_translations.rb'
 
 class Locale < ActiveRecord::Base
   self.primary_key = 'id'
@@ -21,22 +22,30 @@ namespace :translation_engine do
   desc "Create translation, translation_key, and locale tables"
   task :install => :environment do
 
-    create_locale_sql = "DROP TABLE IF EXISTS locales; CREATE TABLE locales (id serial, name varchar(255), created_at timestamp without time zone, updated_at timestamp without time zone);"
-    execute_sql(create_locale_sql)
-    set_primary_key_sql = "UPDATE locales SET id = nextval(pg_get_serial_sequence('locales','id'));"
-    execute_sql(set_primary_key_sql) 
-    set_primary_key_sql = "ALTER TABLE locales ADD PRIMARY KEY (id);"
-    execute_sql(set_primary_key_sql) 
+    connection = ActiveRecord::Base.connection
 
-    create_keys_sql = "DROP TABLE IF EXISTS translation_keys; CREATE TABLE translation_keys (id serial, name varchar(255), created_at timestamp without time zone, updated_at timestamp without time zone);"
-    execute_sql(create_keys_sql)
-    set_primary_key_sql = "UPDATE translation_keys SET id = nextval(pg_get_serial_sequence('translation_keys','id'));"
-    execute_sql(set_primary_key_sql)
-    set_primary_key_sql = "ALTER TABLE translation_keys ADD PRIMARY KEY (id);"
-    execute_sql(set_primary_key_sql) 
+    if !ActiveRecord::Base.connection.table_exists? 'translations'
+      connection.create_table :translations do |t|
+        t.integer :locale_id
+        t.integer :translation_key_id
+        t.string :value
+        t.timestamps
+      end
+    end
+    if !ActiveRecord::Base.connection.table_exists? 'translation_keys'
+      connection.create_table :translation_keys do |t|
+        t.string :name
+        t.timestamps
+      end
+    end
+    if !ActiveRecord::Base.connection.table_exists? 'locales'
+      connection.create_table :locales do |t|
+        t.string :name
+        t.timestamps
+      end
+    end
 
-    add_foreign_keys_to_translations_sql = "ALTER TABLE translations ADD COLUMN locale_id integer, ADD COLUMN translation_key_id integer"
-    execute_sql(add_foreign_keys_to_translations_sql)
+    CreateTranslations.up
 
     Rake::Task["db:schema:dump"].invoke
 
