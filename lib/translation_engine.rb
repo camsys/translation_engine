@@ -15,6 +15,8 @@ module TranslationEngine
   def self.translate_text(key_param, *interpolations)
   	begin
 
+      debugger
+
       #TAGS MODE
       return "[" + key_param.to_s + "]" if I18n.locale == :tags
 
@@ -59,6 +61,14 @@ module TranslationEngine
       return "Translation not found: key = #{key_param}"
     end
 
+  end
+
+  def self.translate_array array_of_keys
+    array_of_translations_to_return = []
+    array_of_keys.each do |key|
+      array_of_translations_to_return.push(translate_text(key))
+    end
+    array_of_translations_to_return
   end
 
   def self.show_translation_item?(key_param)
