@@ -1,6 +1,5 @@
 require 'rake'
 require 'active_record'
-require 'migrations/create_translations.rb'
 
 class Locale < ActiveRecord::Base
   self.primary_key = 'id'
@@ -44,8 +43,6 @@ namespace :translation_engine do
         t.timestamps
       end
     end
-
-    CreateTranslations.up
 
     Rake::Task["db:schema:dump"].invoke
 

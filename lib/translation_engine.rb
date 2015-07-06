@@ -15,9 +15,8 @@ module TranslationEngine
   end
 
   def self.translate_text(key_param, *interpolations)
+    
   	begin
-
-      debugger
 
       #TAGS MODE
       return "[" + key_param.to_s + "]" if I18n.locale == :tags
