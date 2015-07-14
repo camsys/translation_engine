@@ -33,8 +33,8 @@ module TranslationEngine
         translation_key = translation_key_records.first
       else
         #check for plural translation keys
-        is_singular = (interpolations[:count].to_i == 1) if interpolations.present? && interpolations[:count].present?
-        if is_singular.present?
+        if interpolations.present? && interpolations[:count].present?
+          is_singular = (interpolations[:count].to_i == 1) 
           is_singular ? translation_suffix = ".one" : translation_suffix = ".other"
           one_other_match_keys = TranslationKey.where("name like ?", key_param.to_s + "#{translation_suffix}")
           translation_key = one_other_match_keys.first if one_other_match_keys.count > 0
