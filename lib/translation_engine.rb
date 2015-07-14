@@ -16,7 +16,7 @@ module TranslationEngine
 
   def self.translate_text(key_param, *interpolations)
     
-  	begin
+  	# begin
 
       #TAGS MODE
       return "[" + key_param.to_s + "]" if I18n.locale == :tags
@@ -25,16 +25,20 @@ module TranslationEngine
       interpolations = interpolations[0] if interpolations.class == Array
       interpolations = interpolations[0] if interpolations.class == Array
 
+      translation_key = nil 
+
       #KEY
 	    translation_key_records = TranslationKey.where("name = ?",key_param.to_s)
       if translation_key_records.count > 0
         translation_key = translation_key_records.first
       else
         #check for plural translation keys
-        is_singular = (interpolations[:count].to_i == 1) if interpolations[:count].present?
-        is_singular ? translation_suffix = ".one" : translation_suffix = ".other"
-        one_other_match_keys = TranslationKey.where("name like ?", key_param.to_s + "#{translation_suffix}")
-        translation_key = one_other_match_keys.first if one_other_match_keys.count > 0
+        is_singular = (interpolations[:count].to_i == 1) if interpolations.present? && interpolations[:count].present?
+        if is_singular.present?
+          is_singular ? translation_suffix = ".one" : translation_suffix = ".other"
+          one_other_match_keys = TranslationKey.where("name like ?", key_param.to_s + "#{translation_suffix}")
+          translation_key = one_other_match_keys.first if one_other_match_keys.count > 0
+        end
       end
 
       return "Translation key not found = #{key_param}" if translation_key.blank?
@@ -56,11 +60,12 @@ module TranslationEngine
 
 	    return translation_text.html_safe
 
-    rescue => e
-      puts "Translation Error"
-      puts e
-      return "Translation not found: key = #{key_param}"
-    end
+    # rescue => e
+    #   Rails.logger.info "Translation Error"
+    #   Rails.logger.info e
+    #   Rails.logger.info 'key_param was: ' + key_param
+    #   return "Translation not found: key = " + key_param
+    # end
 
   end
 
@@ -127,6 +132,17 @@ module TranslationEngine
       return I18n.l time_param, :format => "%-I:%M %p"
     rescue => e
       return "Error localizing time ({#e})"
+    end
+  end
+
+  def self.available_locales
+    begin
+      s = '(' + (I18n.available_locales + [:tags]).join('|') + ')'
+      %r{#{s}}
+    rescue Exception => e
+      Rails.logger.info "Exception #{e.message} during oneclick_available_locales"
+      puts "Exception #{e.message} during oneclick_available_locales"
+      %r{en}
     end
   end
 
