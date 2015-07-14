@@ -10,20 +10,21 @@ module ActionViewExtensions
     return TranslationEngine.translate_array(array_of_keys)
   end
 
-  def links_to_each_locale(show_translations = false)
+  def links_to_each_locale(show_tags = false)
 
     links = []
-    I18n.available_locales.each do |l|
-      links << link_using_locale(l)
-    end
-    if show_translations
-      links << link_using_locale(:tags)
+    I18n.available_locales.each do |localee|
+      if show_tags
+        links << link_using_locale(localee)
+      elsif localee.to_s != "tags"
+        links << link_using_locale(localee)
+      end
     end
 
     return '' if links.size <= 1
 
     links.join(' | ').html_safe
-    
+
   end
 
   def link_using_locale locale
