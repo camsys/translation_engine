@@ -4,14 +4,13 @@
     .btns.pull-right
       = button_tag id:'create_translation', type: 'submit', class: "btn action-button", style: "margin-right:5px;" do
         = translate_helper(:create_translation)
-      = link_to translate_helper(:cancel), translations_path, { class: "btn action-button" }
+      = link_to translate_helper(:cancel), translation_engine.translations_path, { class: "btn action-button" }
     %h1 Define A Translation
 
 .panel.panel-default{style: 'padding: 0px;'}
   .panel-heading
     %h2.panel-title
       Translation Parameters
-      = add_tooltip("translation_parameters_help")
   .panel-body
     #translations_form
       .row

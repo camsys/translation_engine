@@ -3,6 +3,7 @@ class TranslationsController < ApplicationController
     authorize_resource
 
     def index
+        
         @locales = I18n.available_locales.sort
 
         translations = Translation.includes(:locale, :translation_key).references(:locale, :translation_key)
@@ -24,7 +25,6 @@ class TranslationsController < ApplicationController
 
         @translation_keys = @translations_hash.keys
 
-      render 'index' 
     end
 
     def new
