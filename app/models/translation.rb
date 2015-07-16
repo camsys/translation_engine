@@ -5,5 +5,6 @@ class Translation < ActiveRecord::Base
 
   #validates :locale_id, :uniqueness => {:scope => [:locale_id, :translation_key_id]}
   #validates :translation_key_id, :uniqueness => {:scope => [:locale_id, :translation_key_id]}
+  validates :value, length: { maximum: 255 }
 
 end
