@@ -10,18 +10,6 @@ module ActionViewExtensions
     return TranslationEngine.translate_array(array_of_keys)
   end
 
-  def edit_translations_path translation_id
-    Rails.root + "/translations_engine/edit/#{translation_id}"
-  end
-
-  def new_translation_path
-    Rails.root + "/translations_engine/new"
-  end
-
-  def translations_path
-    Rails.root + "/translations_engine/translations"
-  end
-
   def links_to_each_locale(show_tags = false)
 
     links = []

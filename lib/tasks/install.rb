@@ -1,21 +1,6 @@
 require 'rake'
 require 'active_record'
 
-class Locale < ActiveRecord::Base
-  self.primary_key = 'id'
-end
-
-class TranslationKey < ActiveRecord::Base
-  self.primary_key = 'id'
-end
-
-class Translation < ActiveRecord::Base
-  self.primary_key = 'id'
-  #belongs_to :locale
-  belongs_to :translation_key
-  belongs_to :locale
-end
-
 namespace :translation_engine do
 
   desc "Create translation, translation_key, and locale tables"
