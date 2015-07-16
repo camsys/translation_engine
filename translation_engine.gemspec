@@ -24,6 +24,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "pg"
   spec.add_dependency "i18n-active_record"
   spec.add_dependency "honeybadger"
+  spec.add_dependency "simple_form"
 
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake", "~> 10.0"

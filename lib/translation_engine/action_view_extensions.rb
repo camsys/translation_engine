@@ -14,12 +14,10 @@ module ActionViewExtensions
 
     links = []
     I18n.available_locales.each do |localee|
-      if show_tags
-        links << link_using_locale(localee)
-      elsif localee.to_s != "tags"
-        links << link_using_locale(localee)
-      end
+      links << link_using_locale(localee)
     end
+
+    links << link_using_locale("tags") if show_tags
 
     return '' if links.size <= 1
 

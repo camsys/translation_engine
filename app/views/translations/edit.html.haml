@@ -1,7 +1,25 @@
-%h1 Editing translation
+- content_for :title, "#{translate_helper(:site_title)} - #{translate_helper(:edit)} #{translate_helper(:translations)}"
+.row.info-header
+  .col-sm-12
+    .btns.pull-right
+      = button_tag id:'save_translation', type: 'submit', class: "btn action-button", style: "margin-right:5px;" do
+        = translate_helper(:save)
+      = link_to translate_helper(:cancel), translation_engine.translations_path, { class: "btn action-button" }
+    %h1 Edit A Translation
 
-= render 'form'
-
-= link_to 'Show', translation_engine.translations_path(@translation)
-\|
-= link_to 'Back', translation_engine.translations_path
+.panel.panel-default{style: 'padding: 0px;'}
+  .panel-heading
+    %h2.panel-title
+      Translation Parameters
+  .panel-body
+    #translations_form
+      .row
+        .col-sm-12
+          = simple_form_for @translation, url: translation_engine.translation_path, html: { class: 'form-horizontal' }, wrapper: :horizontal_form do |t|
+            = t.input :key, readonly: true, :input_html => { :value => @translation.translation_key.name }
+            = t.input :locale, readonly: true, :input_html => { :value => @translation.locale.name }
+            = t.input :value, input_html: {rows: 10}
+:javascript
+  $('#save_translation').on('click', function(){
+    $('#translations_form form').submit();
+  });
