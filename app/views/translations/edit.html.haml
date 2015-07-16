@@ -15,7 +15,8 @@
     #translations_form
       .row
         .col-sm-12
-          = simple_form_for @translation, url: translation_engine.translations_path, html: { class: 'form-horizontal' }, wrapper: :horizontal_form do |t|
+          - debugger
+          = simple_form_for @translation, url: translation_engine.translation_path, html: { class: 'form-horizontal' }, wrapper: :horizontal_form do |t|
             = t.input :key, readonly: true, :input_html => { :value => @translation.translation_key.name }
             = t.input :locale, readonly: true, :input_html => { :value => @translation.locale.name }
             = t.input :value, input_html: {rows: 10}

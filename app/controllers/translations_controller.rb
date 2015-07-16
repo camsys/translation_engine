@@ -3,7 +3,7 @@ class TranslationsController < ApplicationController
     authorize_resource
 
     def index
-        
+
         @locales = I18n.available_locales.sort
 
         translations = Translation.includes(:locale, :translation_key).references(:locale, :translation_key)
@@ -42,7 +42,7 @@ class TranslationsController < ApplicationController
 
         if existing_translation.count > 0
             flash[:alert] = "Error: that translation already exists."
-            redirect_to translations_path and return
+            redirect_to translation_engine.translations_path and return
         else
             @translation = Translation.new
             @translation.value = trans_params["value"]
@@ -52,7 +52,7 @@ class TranslationsController < ApplicationController
 
         if @translation.save
             flash[:success] = "Translation Successfully Saved"
-            redirect_to translations_path
+            redirect_to translation_engine.translations_path
         else
             flash[:alert] = "Error creating translation."
             render 'new'
@@ -74,7 +74,7 @@ class TranslationsController < ApplicationController
 
         if @translation.save
             flash[:success] = "Translation Successfully Updated"
-            redirect_to translations_path
+            redirect_to translation_engine.translations_path
         else
             begin
                 @translation.save!
@@ -93,7 +93,7 @@ class TranslationsController < ApplicationController
             translation.destroy
         end
         flash[:success] = "Translation Removed"
-        redirect_to translations_path
+        redirect_to translation_engine.translations_path
     end
 
     private
