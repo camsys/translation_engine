@@ -17,6 +17,7 @@ class TranslationsController < ApplicationController
         translations.find_each do |t|
             key_name = t.translation_key.name
             @translations_hash[key_name] ||= empty_locale_hash.clone
+            @translations_hash[key_name]["id"] ||= t.translation_key.id
             @translations_hash[key_name][t.locale.name] = {
                 id: t.id,
                 value: t.value
@@ -87,10 +88,12 @@ class TranslationsController < ApplicationController
     end
 
     def destroy
-        translation_key_id = params[:id].to_s
-        translations = Translation.where(translation_key_id: translation_key_id)
-        translations.each do |translation|
-            translation.destroy
+        translation_key_ids = params[:id].to_s
+        translation_key_ids.split(",").each do |translation_key_id|
+          translations = Translation.where(translation_key_id: translation_key_id)
+          translations.each do |translation|
+              translation.destroy
+          end
         end
         flash[:success] = "Translation Removed"
         redirect_to translation_engine.translations_path

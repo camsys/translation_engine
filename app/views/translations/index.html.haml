@@ -17,7 +17,7 @@
                 %span.sr-only Close
               %h3.modal-title{id: "modalLabel"}= translate_helper(:confirm_msg)
             .modal-body
-              = link_to "#{translation_engine.translations_path}/", :data => {:ids => []}, :method => :delete, :class => "btn action-button", :id => "deleteTranslations" do
+              = link_to "#{translation_engine.translations_path.split("?")[0]}/", :data => {:ids => []}, :method => :delete, :class => "btn action-button", :id => "deleteTranslations" do
                 = translate_helper(:delete)
             
       
@@ -50,7 +50,7 @@
                   - path = (current_translation.present? && current_translation[:value].blank?) ? translation_engine.edit_translation_path(current_translation[:id]) : translation_engine.new_translation_path(key: translation_key, key_locale: locale.to_s)
                   = link_to translate_helper(:add), path, class: 'btn action-button'
             %td.text-center
-              = check_box_tag "translation", translation_key
+              = check_box_tag "translation", @translations_hash[translation_key]["id"]
               
 :javascript
   $(document).ready(function() {
@@ -67,7 +67,7 @@
 
     $("#translations_table tbody").on("change", "input[type='checkbox']", function(e){
       box = $(e.target);
-      deleteUrl = "#{translation_engine.translations_path}/";
+      deleteUrl = "#{translation_engine.translations_path.split("?")[0]}/";
       ids = $('#deleteTranslations').data('ids');
       if (box.prop('checked')) {
         ids.push(box.val());
