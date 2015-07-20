@@ -12,7 +12,7 @@ namespace :translation_engine do
       connection.create_table :translations do |t|
         t.integer :locale_id
         t.integer :translation_key_id
-        t.string :value
+        t.text :value
         t.timestamps
       end
     end
