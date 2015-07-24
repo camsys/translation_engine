@@ -69,6 +69,14 @@ module TranslationEngine
 
   end
 
+  def self.translate_text_with_tooltip(key_param, *interpolations)
+    translation = translate_text(key_param, interpolations)
+    tooltip_translation = translate_text(key_param + "_help", interpolations)
+    tooltip_translation_with_wrapper = "<i class='fa fa-question-circle fa-2x pull-right label-help' style='margin-top:-4px;' title data-content='#{tooltip_translation}' tabindex='0'></i>"
+    return translation.html_safe + tooltip_translation_with_wrapper.html_safe if !tooltip_translation.include? "Translation key not found"
+    return translation.html_safe
+  end
+
   def self.translate_array array_of_keys
     array_of_translations_to_return = []
     array_of_keys.each do |key|

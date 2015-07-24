@@ -6,6 +6,10 @@ module ActionViewExtensions
     return TranslationEngine.translate_text(key_param, interpolations)
   end
 
+  def translate_helper_with_tooltip(key_param, *interpolations)
+    return TranslationEngine.translate_text_with_tooltip(key_param, interpolations)
+  end
+
   def translate_array_helper(array_of_keys)
     return TranslationEngine.translate_array(array_of_keys)
   end
