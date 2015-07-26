@@ -16,19 +16,34 @@ module TranslationEngine
 
   def self.translate_text(key_param, *interpolations)
     
-  	# begin
+	   return translate_text_with_tooltip(key_param, *interpolations).html_safe
+
+  end
+
+  def self.translate_text_with_tooltip(key_param, *interpolations)
+    translation = build_translation(key_param, interpolations)
+    tooltip_translation = build_translation(key_param.to_s + "_help", interpolations)
+    tooltip_translation_with_wrapper = "<i class='fa fa-question-circle fa-2x pull-right label-help' style='margin-top:-4px;' title data-content='#{tooltip_translation}' tabindex='0'></i>" if !tooltip_translation.include? "Translation key not found"
+    return translation.html_safe + tooltip_translation_with_wrapper.html_safe if !tooltip_translation.include? "Translation key not found"
+    return translation.html_safe
+  end
+
+  def self.build_translation(key_param, *interpolations)
+    
+    # begin
 
       #TAGS MODE
       return "[" + key_param.to_s + "]" if I18n.locale == :tags
 
       #PROCESS INTERPOLATIONS *args
-      interpolations = interpolations[0] if interpolations.class == Array
-      interpolations = interpolations[0] if interpolations.class == Array
+      while interpolations.class == Array
+        interpolations = interpolations[0]
+      end
 
       translation_key = nil 
 
       #KEY
-	    translation_key_records = TranslationKey.where("name = ?",key_param.to_s)
+      translation_key_records = TranslationKey.where("name = ?",key_param.to_s)
       if translation_key_records.count > 0
         translation_key = translation_key_records.first
       else
@@ -44,11 +59,11 @@ module TranslationEngine
       return "Translation key not found = #{key_param}" if translation_key.blank?
 
       #LOCALE
-	    locale_id = Locale.where("name = ?",I18n.locale).first.id
+      locale_id = Locale.where("name = ?",I18n.locale).first.id
 
       #TRANSLATION
-	    translation_records = Translation.where("translation_key_id = ? AND locale_id = ?", translation_key.id, locale_id)
-	    translation_records.count > 0 ? translation_text = translation_records.first.value : translation_text = "Translation not found: key = #{key_param}"
+      translation_records = Translation.where("translation_key_id = ? AND locale_id = ?", translation_key.id, locale_id)
+      translation_records.count > 0 ? translation_text = translation_records.first.value : translation_text = "Translation not found: key = #{key_param}"
 
       #INTERPOLATIONS
       if interpolations.present?
@@ -58,7 +73,7 @@ module TranslationEngine
         end
       end
 
-	    return translation_text.html_safe
+      return translation_text.html_safe
 
     # rescue => e
     #   Rails.logger.info "Translation Error"
@@ -69,13 +84,7 @@ module TranslationEngine
 
   end
 
-  def self.translate_text_with_tooltip(key_param, *interpolations)
-    translation = translate_text(key_param, interpolations)
-    tooltip_translation = translate_text(key_param + "_help", interpolations)
-    tooltip_translation_with_wrapper = "<i class='fa fa-question-circle fa-2x pull-right label-help' style='margin-top:-4px;' title data-content='#{tooltip_translation}' tabindex='0'></i>"
-    return translation.html_safe + tooltip_translation_with_wrapper.html_safe if !tooltip_translation.include? "Translation key not found"
-    return translation.html_safe
-  end
+  #############################
 
   def self.translate_array array_of_keys
     array_of_translations_to_return = []

@@ -3,10 +3,6 @@ module ActionViewExtensions
   extend ActiveSupport::Concern
 
   def translate_helper(key_param, *interpolations)
-    return TranslationEngine.translate_text(key_param, interpolations)
-  end
-
-  def translate_helper_with_tooltip(key_param, *interpolations)
     return TranslationEngine.translate_text_with_tooltip(key_param, interpolations)
   end
 
