@@ -16,11 +16,15 @@ module TranslationEngine
 
   def self.translate_text(key_param, *interpolations)
     
-	   return translate_text_with_tooltip(key_param, *interpolations).html_safe
+    return translate_text_with_tooltip(key_param, *interpolations).html_safe
 
   end
 
   def self.translate_text_with_tooltip(key_param, *interpolations)
+
+    #TAGS MODE
+    return "[" + key_param.to_s + "]" if I18n.locale == :tags
+
     translation = build_translation(key_param, interpolations)
     tooltip_translation = build_translation(key_param.to_s + "_help", interpolations)
     tooltip_translation_with_wrapper = "<i class='fa fa-question-circle fa-2x pull-right label-help' style='margin-top:-4px;' title data-content='#{tooltip_translation}' tabindex='0'></i>" if !tooltip_translation.include? "Translation key not found"
@@ -30,57 +34,54 @@ module TranslationEngine
 
   def self.build_translation(key_param, *interpolations)
     
-    # begin
+    begin
 
-      #TAGS MODE
-      return "[" + key_param.to_s + "]" if I18n.locale == :tags
+    #PROCESS INTERPOLATIONS *args
+    while interpolations.class == Array
+      interpolations = interpolations[0]
+    end
 
-      #PROCESS INTERPOLATIONS *args
-      while interpolations.class == Array
-        interpolations = interpolations[0]
+    translation_key = nil 
+
+    #KEY
+    translation_key_records = TranslationKey.where("name = ?",key_param.to_s)
+    if translation_key_records.count > 0
+      translation_key = translation_key_records.first
+    else
+      #check for plural translation keys
+      if interpolations.present? && interpolations[:count].present?
+        is_singular = (interpolations[:count].to_i == 1) 
+        is_singular ? translation_suffix = ".one" : translation_suffix = ".other"
+        one_other_match_keys = TranslationKey.where("name like ?", key_param.to_s + "#{translation_suffix}")
+        translation_key = one_other_match_keys.first if one_other_match_keys.count > 0
       end
+    end
 
-      translation_key = nil 
+    return "Translation key not found = #{key_param}" if translation_key.blank?
 
-      #KEY
-      translation_key_records = TranslationKey.where("name = ?",key_param.to_s)
-      if translation_key_records.count > 0
-        translation_key = translation_key_records.first
-      else
-        #check for plural translation keys
-        if interpolations.present? && interpolations[:count].present?
-          is_singular = (interpolations[:count].to_i == 1) 
-          is_singular ? translation_suffix = ".one" : translation_suffix = ".other"
-          one_other_match_keys = TranslationKey.where("name like ?", key_param.to_s + "#{translation_suffix}")
-          translation_key = one_other_match_keys.first if one_other_match_keys.count > 0
-        end
+    #LOCALE
+    locale_id = Locale.where("name = ?",I18n.locale).first.id
+
+    #TRANSLATION
+    translation_records = Translation.where("translation_key_id = ? AND locale_id = ?", translation_key.id, locale_id)
+    translation_records.count > 0 ? translation_text = translation_records.first.value : translation_text = "Translation not found: key = #{key_param}"
+
+    #INTERPOLATIONS
+    if interpolations.present?
+      interpolations.keys.each do |interpolation_key|
+        formatted_interpolation_key = "%{#{interpolation_key}}"
+        translation_text.sub! formatted_interpolation_key, interpolations[interpolation_key].to_s if translation_text.sub!(formatted_interpolation_key, interpolations[interpolation_key].to_s).present?
       end
+    end
 
-      return "Translation key not found = #{key_param}" if translation_key.blank?
+    return translation_text.html_safe
 
-      #LOCALE
-      locale_id = Locale.where("name = ?",I18n.locale).first.id
-
-      #TRANSLATION
-      translation_records = Translation.where("translation_key_id = ? AND locale_id = ?", translation_key.id, locale_id)
-      translation_records.count > 0 ? translation_text = translation_records.first.value : translation_text = "Translation not found: key = #{key_param}"
-
-      #INTERPOLATIONS
-      if interpolations.present?
-        interpolations.keys.each do |interpolation_key|
-          formatted_interpolation_key = "%{#{interpolation_key}}"
-          translation_text.sub! formatted_interpolation_key, interpolations[interpolation_key].to_s if translation_text.sub!(formatted_interpolation_key, interpolations[interpolation_key].to_s).present?
-        end
-      end
-
-      return translation_text.html_safe
-
-    # rescue => e
-    #   Rails.logger.info "Translation Error"
-    #   Rails.logger.info e
-    #   Rails.logger.info 'key_param was: ' + key_param
-    #   return "Translation not found: key = " + key_param
-    # end
+    rescue => e
+      Rails.logger.info "Translation Error"
+      Rails.logger.info e
+      Rails.logger.info 'key_param was: ' + key_param
+      return "Translation not found: key = " + key_param
+    end
 
   end
 
