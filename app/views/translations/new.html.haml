@@ -15,7 +15,7 @@
     #translations_form
       .row
         .col-sm-12
-          = simple_form_for @translation, html: { class: 'form-horizontal' }, wrapper: :horizontal_form do |t|
+          = simple_form_for @translation, url: translation_engine.translation_path, html: { class: 'form-horizontal' }, wrapper: :horizontal_form do |t|
             = t.input :key
             - selected_locale_name = @translation.locale.name rescue selected_locale_name = "en"
             = t.input :locale, collection: I18n.available_locales, include_blank: false, :selected => selected_locale_name
