@@ -88,13 +88,10 @@ class TranslationsController < ApplicationController
     end
 
     def destroy
-        translation_key_ids = params[:id].to_s
-        translation_key_ids.split(",").each do |translation_key_id|
-          translations = Translation.where(translation_key_id: translation_key_id)
-          translations.each do |translation|
-              translation.destroy
-          end
-        end
+        translation_key_ids = params[:id].to_s.split(',')
+        Translation.where(translation_key_id: translation_key_ids).delete_all
+        TranslationKey.where(id: translation_key_ids).delete_all
+
         flash[:success] = "Translation Removed"
         redirect_to translation_engine.translations_path
     end
