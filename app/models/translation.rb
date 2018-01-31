@@ -1,4 +1,4 @@
-class Translation < ActiveRecord::Base
+class Translation < ApplicationRecord
 
   belongs_to :locale
   belongs_to :translation_key

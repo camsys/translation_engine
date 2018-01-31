@@ -1,4 +1,4 @@
-class TranslationKey < ActiveRecord::Base
+class TranslationKey < ApplicationRecord
 
   validates :name, length: { maximum: 255 }
 
