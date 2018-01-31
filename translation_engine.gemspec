@@ -7,8 +7,8 @@ Gem::Specification.new do |spec|
   
   spec.name          = "translation_engine"
   spec.version       = TranslationEngine::VERSION
-  spec.authors       = ["Alex Bromley"]
-  spec.email         = ["abromley@camsys.com"]
+  spec.authors       = ["Alex Bromley, Xudong Liu"]
+  spec.email         = ["abromley@camsys.com, xudongliu@camsys.com"]
   spec.summary       = "Intended to provide translation services to Camsys apps, particularly OneClick and RidePilot."
   spec.description   = "Use I18n to provide translation services."
   spec.homepage      = "https://github.com/camsys/translation_engine"
@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "rails", "~>4.0"
+  spec.add_dependency "rails", "~>5.0"
   spec.add_dependency "sass-rails"
   spec.add_dependency "pg"
   spec.add_dependency "i18n-active_record"
